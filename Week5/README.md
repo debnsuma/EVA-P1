@@ -4,20 +4,22 @@
 
 **Target** 
 
-Base Code with Squeeze and Excitation model, to make sure we are able to set the transforms, data loader, and basic workflow
+Basic building block 
+
 
 **Results** 
 
-- Parameters: 13,832
-- Best Train Accuracy: 99.34%
-- Best Test Accuracy: 98.71%
+- Parameters: 13,952
+- Best Train Accuracy: 98.24%
+- Best Test Accuracy: 98.08%
 
 **Analysis** 
 
-- Model is quite large but working
-- Model is over-fitting
+- basic building block is working fine, 
+- model seems to be overfit and 
+- no. of parameters is more than 10,000
 
-[Version 0 - Code](https://github.com/EVA5-Stars/S5/blob/master/00_EVA5_Session5_Base_Code_Step_0.ipynb)
+[Version 0 - Code](https://github.com/EVA5-Stars/S5/blob/master/00_EVA5_Session5_Base_Code_Step_0)
 
 ### Version 1 (with GAP)
 -------------------------
@@ -28,62 +30,58 @@ Add GAP and remove the last BIG kernel in the Output Block of the CNN.
 
 **Results** 
 
-- Parameters: 7,432
-- Best Train Accuracy: 97.94%
-- Best Test Accuracy: 97.92%
+- Parameters: 14,112
+- Best Train Accuracy: 99.62%
+- Best Test Accuracy: 99.11%
 
 **Analysis** 
 
-- As we replaced the last layer with GAP, the total no. of parameters reduced to bellow 8000
-- Model was able to generalise it better
-- Overall model's accuracy got reduced. , but test accuracy was observed to be little more w.r.t the training accuracy, most of the time, which was a good thing.
+- Model seems to be overfit. 
+- And test accuracy is not yet there what we wanted 99.4
 
-[Version 1 - Code](https://github.com/EVA5-Stars/S5/blob/master/01_EVA5_Session5_GAP_Step_1.ipynb)
+[Version 1 - Code](https://github.com/EVA5-Stars/S5/blob/master/01_EVA5_Session5_Base_Code_Step_1)
 
-### Version 2 (with Batch-Norm)
+### Version 2 (added Dropout)
 -------------------------------
 
 **Target** 
 
-Add Batch-norm to increase model efficiency.
+Added Dropout torawrds the last layers
 
 **Results** 
 
-- Parameters: 7,612
-- Best Train Accuracy: 99.18%
-- Best Test Accuracy: 99.13%
+- Parameters: 14,112
+- Best Train Accuracy: 99.43%
+- Best Test Accuracy: 99.21%
 
 **Analysis** 
 
-- No. of model parameters got increased a bit, which was expected beacuse of Batch Normalization
-- Overall model performance got increased a bit, but we again started to see overfit and its not able to reach 99.4% accuracy
+- Accuracy got improved a bit
+- but no. of parameters are still more than 10000
 
-[Version 2 - Code](https://github.com/EVA5-Stars/S5/blob/master/02_EVA5_Session5_BN_Step_2.ipynb)
+[Version 2 - Code](https://github.com/EVA5-Stars/S5/blob/master/02_EVA5_Session5_Base_Code_Step_2.ipynb)
 
-### Version 3 (with LR Scheduler)
+### Version 3 (with GAP)
 ---------------------------------
 
 **Target** 
 
-Add LR Scheduler
+Aded GAP Layer
 
 **Results** 
 
-- Parameters: 7,612
-- Best Train Accuracy: 99.62%
-- Best Test Accuracy: 99.28%
+- Parameters: 7,702
+- Best Train Accuracy: 99.29%
+- Best Test Accuracy: 99.24 %
 
 **Analysis** 
 
-- Got better performance a bit, but still not 99.4%
-- We played with different combinations of step_size and gamma value for the StepLR,
-    - step_size = [5,6,7,8,9,10,11,12,13]
-    - gamma = [.1, .2, .3]
-- Finally we frozen to (step_size=9, gamma=0.2)
+- accuracy got improved but didnt seem to overfit 
+- no. of parameters got reduced
 
-[Version 3 - Code](https://github.com/EVA5-Stars/S5/blob/master/03_EVA5_Session5_StepLR_Step_3.ipynb)
+[Version 3 - Code](https://github.com/EVA5-Stars/S5/blob/master/03_EVA5_Session5_Base_Code_Step_3.ipynb)
 
-### Version 4 (with ImageAugmentation)
+### Version 4 (with LR Scheduler and ImageAugmentation)
 --------------------------------------
 
 **Target** 
@@ -92,16 +90,16 @@ Add rotation, try with 5-10 degrees
 
 **Results** 
 
-- Parameters: 7,612
-- Best Train Accuracy: 99.23%
-- Best Test Accuracy: 99.45%
+- Parameters: 7,702
+- Best Train Accuracy: 99.03%
+- Best Test Accuracy: 99.42 %
 
 **Analysis** 
 
-- Tried with multiple degrees for image augmentation, but finally decided to go with (-10, +10)
-- Model was not able to generalize it better.
+- accuracy got increased and was consistent for last 5 epocs, 
+- played around with different combinations for LR Scheduler (step_size and gamma), and (step_size=.9 and gamma=.1) worked well with learing rate of .2
 - Reached the accuracy of 99.4 % for last 4 epocs with total no. of parameters less than 8000
 
-[Version 4 - Code](https://github.com/EVA5-Stars/S5/blob/master/04_EVA5_Session5_ImageAugmentation_Step_4.ipynb)
+[Version 4 - Code](https://github.com/EVA5-Stars/S5/blob/master/04_EVA5_Session5_Base_Code_Step_4.ipynb)
 
 
