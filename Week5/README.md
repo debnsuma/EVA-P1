@@ -19,7 +19,7 @@ Basic building block
 - model seems to be overfit and 
 - no. of parameters is more than 10,000
 
-[Version 0 - Code](https://github.com/EVA5-Stars/S5/blob/master/00_EVA5_Session5_Base_Code_Step_0)
+[Version 0 - Code](https://github.com/debnsuma/EVA-P1/blob/master/Week5/00_EVA5_Session5_Base_Code_Step_0.ipynb)
 
 ### Version 1 (with GAP)
 -------------------------
@@ -39,7 +39,7 @@ Add GAP and remove the last BIG kernel in the Output Block of the CNN.
 - Model seems to be overfit. 
 - And test accuracy is not yet there what we wanted 99.4
 
-[Version 1 - Code](https://github.com/EVA5-Stars/S5/blob/master/01_EVA5_Session5_Base_Code_Step_1)
+[Version 1 - Code](https://github.com/debnsuma/EVA-P1/blob/master/Week5/01_EVA5_Session5_Base_Code_Step_1.ipynb)
 
 ### Version 2 (added Dropout)
 -------------------------------
@@ -59,7 +59,7 @@ Added Dropout torawrds the last layers
 - Accuracy got improved a bit
 - but no. of parameters are still more than 10000
 
-[Version 2 - Code](https://github.com/EVA5-Stars/S5/blob/master/02_EVA5_Session5_Base_Code_Step_2.ipynb)
+[Version 2 - Code](https://github.com/debnsuma/EVA-P1/blob/master/Week5/02_EVA5_Session5_Base_Code_Step_2.ipynb)
 
 ### Version 3 (with GAP)
 ---------------------------------
@@ -79,7 +79,7 @@ Aded GAP Layer
 - accuracy got improved but didnt seem to overfit 
 - no. of parameters got reduced
 
-[Version 3 - Code](https://github.com/EVA5-Stars/S5/blob/master/03_EVA5_Session5_Base_Code_Step_3.ipynb)
+[Version 3 - Code](https://github.com/debnsuma/EVA-P1/blob/master/Week5/03_EVA5_Session5_Base_Code_Step_3.ipynb)
 
 ### Version 4 (with LR Scheduler and ImageAugmentation)
 --------------------------------------
@@ -100,6 +100,6 @@ Add rotation, try with 5-10 degrees
 - played around with different combinations for LR Scheduler (step_size and gamma), and (step_size=.9 and gamma=.1) worked well with learing rate of .2
 - Reached the accuracy of 99.4 % for last 4 epocs with total no. of parameters less than 8000
 
-[Version 4 - Code](https://github.com/EVA5-Stars/S5/blob/master/04_EVA5_Session5_Base_Code_Step_4.ipynb)
+[Version 4 - Code](https://github.com/debnsuma/EVA-P1/blob/master/Week5/04_EVA5_Session5_Base_Code_Step_4.ipynb)
 
 
